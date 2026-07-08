@@ -67,7 +67,7 @@ export default function GoogleReviews() {
 
             {/* Quote Block */}
             <p className="text-sm md:text-base text-slate-600 dark:text-gray-300 font-inter leading-relaxed max-w-md italic">
-              "Trusted by builders, contractors, homeowners and industrial customers across Andhra Pradesh."
+              &ldquo;Trusted by builders, contractors, homeowners and industrial customers across Andhra Pradesh.&rdquo;
             </p>
 
             {/* Action Buttons */}

@@ -108,7 +108,7 @@ export default function TestimonialSlider() {
                 </div>
 
                 <p className="font-inter text-sm sm:text-base text-slate-600 dark:text-gray-200 leading-relaxed italic max-w-2xl mx-auto">
-                  "{current.text}"
+                  &ldquo;{current.text}&rdquo;
                 </p>
 
                 <div>
