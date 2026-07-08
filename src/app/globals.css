@@ -1,0 +1,435 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-slate: #0F2942;
+  --color-brand-steel: #64748B;
+  --color-brand-amber: #D4A017;
+  --color-brand-ice: #F8FAFC;
+  --color-brand-charcoal: #4A5568;
+  --color-brand-success: #10B981;
+  --color-brand-error: #EF4444;
+  
+  --font-outfit: 'Outfit', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Premium cubic-bezier animation timing requested */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-fade-in: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  
+  /* Unified border radius system */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0F2942;
+  
+  /* Core brand colors mapping */
+  --brand-slate: #0F2942;
+  --brand-steel: #64748B;
+  --brand-amber: #D4A017;
+  --brand-ice: #F8FAFC;
+  --brand-charcoal: #4A5568;
+  --brand-success: #10B981;
+  --brand-error: #EF4444;
+}
+
+/* Override Tailwind CSS v4 dark mode to require a class (.dark) instead of matching system settings */
+@variant dark (&:where(.dark, .dark *));
+
+/* Global Base Styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 1. Typography Hierarchy Rules */
+h1, .h1 {
+  font-family: var(--font-outfit);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem); /* Responsive fluid font scaling */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--brand-slate);
+}
+
+h2, .h2 {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3vw + 0.75rem, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--brand-slate);
+}
+
+h3, .h3 {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  font-size: clamp(1.35rem, 2vw + 0.5rem, 1.75rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--brand-slate);
+}
+
+h4, .h4 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.5vw + 0.4rem, 1.35rem);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: var(--brand-slate);
+}
+
+h5, .h5 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: clamp(1rem, 1vw + 0.35rem, 1.15rem);
+  line-height: 1.4;
+  color: var(--brand-slate);
+}
+
+h6, .h6 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-steel);
+}
+
+/* Prevent heading wrapping awkwardly on small screens */
+.no-wrap-header {
+  white-space: nowrap;
+}
+
+/* 2. Spacing & Container System */
+.container-custom {
+  width: 100%;
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 5vw, 2.5rem);
+  padding-right: clamp(1rem, 5vw, 2.5rem);
+}
+
+.section-spacing {
+  padding-top: clamp(3.5rem, 8vw, 6.5rem);
+  padding-bottom: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+/* 3. Predefined Premium Shadows */
+.shadow-ent-sm {
+  box-shadow: 0 2px 8px -2px rgba(15, 41, 66, 0.04);
+}
+
+.shadow-ent-md {
+  box-shadow: 0 8px 24px -6px rgba(15, 41, 66, 0.06);
+}
+
+.shadow-ent-lg {
+  box-shadow: 0 16px 40px -10px rgba(15, 41, 66, 0.08);
+}
+
+/* 4. Enterprise Premium Cards */
+.ent-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(15, 41, 66, 0.06);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-ent-sm);
+  transition: all 0.4s var(--ease-premium);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.dark .ent-card {
+  background-color: rgba(15, 25, 38, 0.6);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.ent-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-ent-lg);
+  border-color: rgba(212, 160, 23, 0.25);
+}
+
+/* 5. Enterprise Premium Buttons */
+.ent-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-slate);
+  background-color: var(--brand-amber);
+  border: 1px solid var(--brand-amber);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-premium);
+  box-shadow: 0 2px 4px rgba(212, 160, 23, 0.1);
+}
+
+.ent-btn-primary:hover:not(:disabled) {
+  background-color: #C09012;
+  border-color: #C09012;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 160, 23, 0.2);
+}
+
+.ent-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ent-btn-primary:focus-visible {
+  outline: 2px solid var(--brand-amber);
+  outline-offset: 2px;
+}
+
+.ent-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ent-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.75rem;
+  padding: 0 1.5rem;
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-premium);
+}
+
+.ent-btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.ent-btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ent-btn-secondary:focus-visible {
+  outline: 2px solid var(--brand-steel);
+  outline-offset: 2px;
+}
+
+.ent-btn-secondary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Light theme secondary button */
+.ent-btn-secondary-light {
+  color: var(--brand-slate);
+  background-color: rgba(15, 41, 66, 0.02);
+  border: 1px solid rgba(15, 41, 66, 0.1);
+}
+.ent-btn-secondary-light:hover:not(:disabled) {
+  background-color: rgba(15, 41, 66, 0.05);
+  border-color: rgba(15, 41, 66, 0.2);
+}
+.dark .ent-btn-secondary-light {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+.dark .ent-btn-secondary-light:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* 6. Form Styling System */
+.ent-form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ent-label {
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-slate);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.dark .ent-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ent-input {
+  width: 100%;
+  height: 2.75rem;
+  padding: 0.5rem 0.875rem;
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  color: var(--brand-slate);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(15, 41, 66, 0.15);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s var(--ease-premium);
+}
+.dark .ent-input {
+  color: #FFFFFF;
+  background-color: rgba(15, 25, 38, 0.8);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.ent-input:hover:not(:disabled) {
+  border-color: rgba(15, 41, 66, 0.3);
+}
+.dark .ent-input:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.ent-input:focus {
+  outline: none;
+  border-color: var(--brand-amber);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+}
+
+.ent-textarea {
+  width: 100%;
+  min-height: 7.5rem;
+  padding: 0.75rem 0.875rem;
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  color: var(--brand-slate);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(15, 41, 66, 0.15);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s var(--ease-premium);
+  resize: vertical;
+}
+.dark .ent-textarea {
+  color: #FFFFFF;
+  background-color: rgba(15, 25, 38, 0.8);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.ent-textarea:focus {
+  outline: none;
+  border-color: var(--brand-amber);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
+}
+
+.ent-input-error {
+  border-color: var(--brand-error) !important;
+}
+.ent-input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+.ent-error-message {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--brand-error);
+}
+
+.ent-success-message {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-success);
+}
+
+/* 7. Enterprise Tables */
+.ent-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(15, 41, 66, 0.08);
+}
+.dark .ent-table-container {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.ent-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8125rem;
+}
+
+.ent-table th {
+  background-color: rgba(15, 41, 66, 0.02);
+  color: var(--brand-slate);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid rgba(15, 41, 66, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+.dark .ent-table th {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #FFFFFF;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.ent-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(15, 41, 66, 0.06);
+  color: var(--brand-charcoal);
+}
+.dark .ent-table td {
+  border-bottom-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ent-table tbody tr:hover {
+  background-color: rgba(15, 41, 66, 0.015);
+}
+.dark .ent-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* Brand specific styling overrides */
+.premium-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+.dark .premium-gradient {
+  background: linear-gradient(135deg, #0f2942 0%, #0a1b2c 100%);
+}
+
+.glassmorphic {
+  backdrop-filter: blur(16px);
+  background: rgba(15, 41, 66, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+

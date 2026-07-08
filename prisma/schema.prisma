@@ -1,0 +1,186 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// --- Better Auth Schema Tables ---
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  role          String    @default("user") // admin, client_buyer, user
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  sessions      Session[]
+  accounts      Account[]
+  rfqs          RFQ[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accountId             String
+  providerId            String
+  accessToken           String?
+  refreshToken          String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@unique([providerId, accountId])
+  @@index([userId])
+}
+
+model Verification {
+  id         String    @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+}
+
+// --- Business Domain Tables ---
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  products    Product[]
+
+  @@index([slug])
+}
+
+model Brand {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  logoUrl     String?
+  description String?
+  products    Product[]
+
+  @@index([slug])
+}
+
+model Product {
+  id           String    @id @default(cuid())
+  name         String
+  slug         String    @unique
+  description  String
+  categoryId   String
+  category     Category  @relation(fields: [categoryId], references: [id])
+  brandId      String?
+  brand        Brand?    @relation(fields: [brandId], references: [id])
+  specs        Json      // Dynamic technical specs (weight, dimensions, standard sizes)
+  imageUrl     String?
+  datasheetUrl String?   // Cloudinary PDF link
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  rfqItems     RFQItem[]
+
+  @@index([categoryId])
+  @@index([brandId])
+  @@index([slug])
+}
+
+model RFQ {
+  id             String    @id @default(cuid())
+  userId         String?
+  user           User?     @relation(fields: [userId], references: [id])
+  status         String    @default("PENDING") // PENDING, UNDER_REVIEW, QUOTED, CLOSED
+  clientName     String
+  clientEmail    String
+  clientPhone    String
+  companyName    String?
+  notes          String?
+  drawingUrl     String?   // Secure Cloudinary drawing link
+  quotationUrl   String?   // Signed quotation PDF link
+  items          RFQItem[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@index([userId])
+  @@index([status])
+}
+
+model RFQItem {
+  id         String   @id @default(cuid())
+  rfqId      String
+  rfq        RFQ      @relation(fields: [rfqId], references: [id], onDelete: Cascade)
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id])
+  quantity   Int
+  customSpecs String?  // Specific lengths, custom thickness, special instructions
+
+  @@index([rfqId])
+  @@index([productId])
+}
+
+model Gallery {
+  id          String   @id @default(cuid())
+  title       String
+  imageUrl    String
+  caption     String?
+  tag         String   @default("General") // e.g., "Factory", "Project", "Team"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  name        String
+  role        String   // e.g. "Lead Structural Engineer", "Home Owner"
+  company     String?  // e.g. "L&T Construction"
+  message     String
+  rating      Int      @default(5)
+  avatarUrl   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Enquiry {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  subject     String
+  message     String
+  status      String   @default("PENDING") // PENDING, RESPONDED, ARCHIVED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+}
+
+model WebsiteSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique // e.g. "contact_email", "phone_number", "address"
+  value       String
+  updatedAt   DateTime @updatedAt
+}
