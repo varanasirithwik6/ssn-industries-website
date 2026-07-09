@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ssnindustries.vercel.app';
-  const routes = ['', '/about', '/products', '/gallery', '/brands', '/tools', '/contact'];
+  const baseUrl = 'https://www.ssn-industries.in';
+  const routes = ['', '/about', '/products', '/gallery', '/brands', '/tools', '/contact', '/connect'];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

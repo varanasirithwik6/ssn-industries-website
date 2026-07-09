@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://ssnindustries.vercel.app/sitemap.xml',
+    sitemap: 'https://www.ssn-industries.in/sitemap.xml',
   };
 }

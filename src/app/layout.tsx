@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     template: '%s | SSN Industries'
   },
   description: 'Enterprise supplier of structural steel, premium roofing sheets, ERW pipes, UPVC profiles, and high yield strength TMT rebar reinforcement.',
-  metadataBase: new URL('https://ssnindustries.vercel.app'),
+  metadataBase: new URL('https://www.ssn-industries.in'),
   alternates: {
     canonical: './',
   },
   openGraph: {
     title: 'SSN Industries | Premium Roofing Sheets & Industrial Materials',
     description: 'Enterprise supplier of structural steel, premium roofing sheets, ERW pipes, UPVC profiles, and high yield strength TMT rebar reinforcement.',
-    url: 'https://ssnindustries.vercel.app',
+    url: 'https://www.ssn-industries.in',
     siteName: 'SSN Industries',
     locale: 'en_US',
     type: 'website',
@@ -53,7 +53,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "SSN Industries",
-  "image": "https://ssnindustries.vercel.app/home-hero-materials.jpg",
+  "image": "https://www.ssn-industries.in/home-hero-materials.jpg",
   "description": "SSN Industries manufactures and supplies premium building materials, reinforcement TMT rebars, heavy-duty hollow sections, and custom roofing sheets.",
   "address": {
     "@type": "PostalAddress",
@@ -68,7 +68,7 @@ const jsonLd = {
     "latitude": 18.6929354,
     "longitude": 83.5868741
   },
-  "url": "https://ssnindustries.vercel.app",
+  "url": "https://www.ssn-industries.in",
   "telephone": "+917780224863",
   "openingHoursSpecification": [
     {

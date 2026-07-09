@@ -453,7 +453,7 @@ export default function SmartHubWidget() {
                       Welcome to SSN Industries.
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      I'm your AI Product & Sales Assistant.
+                      I&apos;m your AI Product &amp; Sales Assistant.
                     </p>
                   </div>
 
