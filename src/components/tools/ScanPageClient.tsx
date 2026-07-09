@@ -218,26 +218,6 @@ export default function ScanPageClient() {
               <ChevronRight className="h-4 w-4 text-slate-400 dark:text-gray-500 group-hover:text-brand-amber transition-colors" />
             </motion.a>
 
-            {/* Card 6: Email */}
-            <motion.a
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              href={`mailto:${mdEmail}`}
-              onClick={() => handleAnalytics('email_click')}
-              className="flex items-center justify-between p-4 bg-white dark:bg-slate-900/60 rounded-2xl border border-slate-200/50 dark:border-white/5 hover:border-brand-amber/30 dark:hover:border-brand-amber/30 shadow-md transition-all hover:scale-[1.01] duration-300 group"
-            >
-              <div className="flex items-center space-x-3.5">
-                <div className="h-10 w-10 rounded-full bg-slate-50 dark:bg-white/5 flex items-center justify-center border border-slate-100 dark:border-white/5 group-hover:bg-brand-amber/10 group-hover:border-brand-amber/20 transition-all">
-                  <Mail className="h-5 w-5 text-blue-500" />
-                </div>
-                <div className="text-left">
-                  <h3 className="font-outfit text-sm font-bold text-brand-slate dark:text-white leading-tight">Send Quotation Enquiry</h3>
-                  <p className="text-[10px] text-slate-500 dark:text-gray-400 leading-normal mt-0.5">Email your custom blueprint or dimensions layout</p>
-                </div>
-              </div>
-              <ChevronRight className="h-4 w-4 text-slate-400 dark:text-gray-500 group-hover:text-brand-amber transition-colors" />
-            </motion.a>
 
             {/* Card 7: Download Catalogue */}
             <motion.a
