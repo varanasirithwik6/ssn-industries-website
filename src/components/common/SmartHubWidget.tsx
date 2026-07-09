@@ -398,7 +398,7 @@ export default function SmartHubWidget() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed bottom-[96px] right-[24px] z-50 w-[calc(100vw-48px)] sm:w-[380px] h-[calc(100vh-140px)] sm:h-[640px] flex-col overflow-hidden rounded-[20px] border border-white/20 dark:border-white/10 bg-white/95 dark:bg-[#0F2942]/95 backdrop-blur-xl shadow-[0_25px_60px_rgba(0,0,0,0.18)]"
+            className="fixed bottom-[96px] right-[24px] z-50 w-[calc(100vw-48px)] sm:w-[380px] h-[calc(100vh-140px)] sm:h-[640px] flex flex-col overflow-hidden rounded-[20px] border border-white/20 dark:border-white/10 bg-white/95 dark:bg-[#0F2942]/95 backdrop-blur-xl shadow-[0_25px_60px_rgba(0,0,0,0.18)]"
           >
             {/* ── Header ── */}
             <div className="bg-[#0F2942] px-5 py-4 flex items-center justify-between border-b border-white/5 shrink-0">
@@ -426,7 +426,11 @@ export default function SmartHubWidget() {
             </div>
 
             {/* ── Scrollable Chat / Discovery Core ── */}
-            <div ref={chatScrollRef} className="flex-grow overflow-y-auto p-5 space-y-6 scrollbar-thin select-text">
+            <div 
+              ref={chatScrollRef} 
+              className="flex-grow min-h-0 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin select-text"
+              style={{ WebkitOverflowScrolling: 'touch' }}
+            >
               {messages.length === 0 ? (
                 <motion.div
                   initial={{ opacity: 0, y: 15 }}
