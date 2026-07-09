@@ -1,9 +1,17 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Factory, ShieldCheck, Mail, MapPin, Phone } from 'lucide-react';
 
+import { usePathname } from 'next/navigation';
+
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  // Hide footer completely on the /scan route
+  if (pathname?.startsWith('/scan')) return null;
 
   return (
     <footer className="border-t border-brand-charcoal/10 bg-slate-900 text-gray-400 dark:border-white/5">

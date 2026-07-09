@@ -11,6 +11,9 @@ export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  // Hide header completely on the /scan route
+  if (pathname?.startsWith('/scan')) return null;
+
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },

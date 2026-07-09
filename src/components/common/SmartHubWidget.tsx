@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import {
@@ -156,9 +157,13 @@ interface ChatMessage {
 }
 
 export default function SmartHubWidget() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const hubRef = useRef<HTMLDivElement>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
+
+  // Hide widget on scan routes
+  if (pathname?.startsWith('/scan')) return null;
 
   // ── AI Chat state ──
   const [chatInput, setChatInput] = useState('');
