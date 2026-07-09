@@ -366,28 +366,12 @@ export default function SmartHubWidget() {
 
   return (
     <div ref={hubRef} className="font-inter">
-      {/* ═══ MOBILE-ONLY: Standalone WhatsApp button ═══ */}
-      <motion.a
-        href="https://wa.me/917780224863"
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="sm:hidden fixed bottom-[32px] right-[24px] z-50 flex items-center justify-center h-14 w-14 rounded-full bg-[#25D366] text-white shadow-2xl transition-all"
-        aria-label="Chat on WhatsApp"
-      >
-        <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping pointer-events-none" />
-        <div className="relative h-7 w-7 z-10">
-          <Image src="/images/logos/logo-whatsapp.png" alt="WhatsApp" fill sizes="28px" className="object-contain" />
-        </div>
-      </motion.a>
-
-      {/* ═══ DESKTOP/TABLET: Hub launcher button ═══ */}
+      {/* ═══ ASSISTANT LAUNCHER BUTTON (Available on all screen sizes) ═══ */}
       <motion.button
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="hidden sm:flex fixed bottom-[32px] right-[24px] z-50 items-center justify-center h-14 w-14 rounded-full bg-[#0F2942] text-white shadow-2xl hover:shadow-[0_8px_30px_rgba(15,41,66,0.5)] transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#D4A017]/40"
+        className="fixed bottom-[32px] right-[24px] z-50 flex items-center justify-center h-14 w-14 rounded-full bg-[#0F2942] text-white shadow-2xl hover:shadow-[0_8px_30px_rgba(15,41,66,0.5)] transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#D4A017]/40"
         aria-label={isOpen ? "Close SSN Assistant" : "Open SSN Assistant"}
       >
         <AnimatePresence mode="wait">
@@ -414,7 +398,7 @@ export default function SmartHubWidget() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="hidden sm:flex fixed bottom-[96px] right-[24px] z-50 w-[380px] h-[640px] flex-col overflow-hidden rounded-[20px] border border-white/20 dark:border-white/10 bg-white/95 dark:bg-[#0F2942]/95 backdrop-blur-xl shadow-[0_25px_60px_rgba(0,0,0,0.18)]"
+            className="fixed bottom-[96px] right-[24px] z-50 w-[calc(100vw-48px)] sm:w-[380px] h-[calc(100vh-140px)] sm:h-[640px] flex-col overflow-hidden rounded-[20px] border border-white/20 dark:border-white/10 bg-white/95 dark:bg-[#0F2942]/95 backdrop-blur-xl shadow-[0_25px_60px_rgba(0,0,0,0.18)]"
           >
             {/* ── Header ── */}
             <div className="bg-[#0F2942] px-5 py-4 flex items-center justify-between border-b border-white/5 shrink-0">
