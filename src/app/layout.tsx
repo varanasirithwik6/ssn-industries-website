@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import SmartHubWidget from '@/components/common/SmartHubWidget';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -115,6 +116,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <SmartHubWidget />
+        <Analytics />
       </body>
     </html>
   );
