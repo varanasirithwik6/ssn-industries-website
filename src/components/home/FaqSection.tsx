@@ -17,7 +17,7 @@ export default function FaqSection() {
     },
     {
       question: "What grades and specifications of TMT rods do you offer?",
-      answer: "We offer Fe 550D grade TMT reinforcement rebars conforming strictly to IS 1786. These feature high bond strength and ductility for seismic safety. Available diameters include 8mm, 10mm, 12mm, 16mm, 20mm, 25mm, and 32mm, sourced from certified suppliers Vizag Steel and Simhadri TMT."
+      answer: "We offer Fe 550D grade TMT reinforcement rebars conforming strictly to IS 1786. These feature high bond strength and ductility for seismic safety. Available diameters include 8mm, 10mm, 12mm, 16mm, 20mm, 25mm, and 32mm, sourced from certified suppliers Vizag Steel, Simhadri TMT, and OMPL TMT."
     },
     {
       question: "Which delivery areas and transit logistics do you cover?",
@@ -25,7 +25,7 @@ export default function FaqSection() {
     },
     {
       question: "Which authorized manufacturer brands are available in your catalog?",
-      answer: "Our catalog consists of leading, verified steel and plumbing brands including Tata Steel, JSW Steel, Jindal, Vizag Steel, Simhadri TMT, OMPL Steel, and premium UPVC products."
+      answer: "Our catalog consists of leading, verified steel and plumbing brands including Tata Steel, JSW Steel, Jindal, Vizag Steel, Simhadri TMT, OMPL TMT, and premium UPVC products."
     },
     {
       question: "How can I request a price quotation for my project?",

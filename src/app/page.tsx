@@ -23,7 +23,7 @@ export default function Home() {
     { name: 'JSW Steel', logoPath: '/images/logos/logo-jsw.png' },
     { name: 'Visakha Steel', logoPath: '/images/logos/logo-vizag.png' },
     { name: 'Simhadri Steel', logoPath: '/images/logos/logo-simhadri.png' },
-    { name: 'OMPL', logoPath: '/images/logos/logo-ompl.png' },
+    { name: 'OMPL', logoPath: '/images/logos/logo-ompl-tmt.png' },
     { name: 'uPVC Pipes', logoPath: '/images/logos/logo-upvc.png' },
     { name: 'Hariom Pipes', logoPath: '/images/logos/logo-hariom.png' },
     { name: 'AG Gold Steel', logoPath: '/images/logos/logo-aggold.png' },

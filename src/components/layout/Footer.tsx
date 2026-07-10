@@ -89,9 +89,9 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">Colour Coated Roofing Sheets</li>
               <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">Galvanized & Galvalume Sheets</li>
-              <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">TMT Rods (Vizag, Simhadri)</li>
+              <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">TMT Rods (Vizag, Simhadri, OMPL)</li>
               <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">Structural Steel Beams</li>
-              <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">OMPL Steel Pipes</li>
+              <li className="text-gray-300 hover:text-brand-amber hover:pl-1 transition-all duration-300 cursor-default">OMPL TMT Rods</li>
             </ul>
           </div>
 

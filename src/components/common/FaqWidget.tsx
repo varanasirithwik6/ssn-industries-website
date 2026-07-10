@@ -21,7 +21,7 @@ export default function FaqWidget() {
     },
     {
       question: "What grades of TMT rods do you offer?",
-      answer: "We offer Fe 550D grade TMT reinforcement rebars conforming strictly to IS 1786. Sourced from certified suppliers Vizag Steel and Simhadri TMT. Diameters range from 8mm to 32mm."
+      answer: "We offer Fe 550D grade TMT reinforcement rebars conforming strictly to IS 1786. Sourced from certified suppliers Vizag Steel, Simhadri TMT, and OMPL TMT. Diameters range from 8mm to 32mm."
     },
     {
       question: "Which delivery areas do you cover?",
@@ -29,7 +29,7 @@ export default function FaqWidget() {
     },
     {
       question: "Which steel brands are available?",
-      answer: "Our catalog consists of leading, verified steel and plumbing brands including Tata Steel, JSW Steel, Jindal, Vizag Steel, Simhadri TMT, OMPL Steel, and premium UPVC products."
+      answer: "Our catalog consists of leading, verified steel and plumbing brands including Tata Steel, JSW Steel, Jindal, Vizag Steel, Simhadri TMT, OMPL TMT, and premium UPVC products."
     },
     {
       question: "How can I request a price quotation?",
