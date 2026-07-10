@@ -34,8 +34,8 @@ const KNOWLEDGE_BASE: KnowledgeBaseItem[] = [
   },
   {
     category: 'products',
-    keywords: ['tmt', 'rebar', 'rebars', 'bar', 'bars', 'rods', 'rod', 'fe550d', '550', 'vizag', 'simhadri', 'aggold'],
-    response: "We supply Fe 550D grade SSN TMT RODS conforming strictly to IS 1786 from certified mills like Vizag Steel, Simhadri TMT, OMPL TMT Rods, and AG Gold Steel. Available diameters range from 4 mm to 25 mm, and lengths are customizable to your project specifications.",
+    keywords: ['tmt', 'rebar', 'rebars', 'bar', 'bars', 'rods', 'rod', 'fe550d', '550', 'vizag', 'simhadri', 'a1gold'],
+    response: "We supply Fe 550D grade SSN TMT RODS conforming strictly to IS 1786 from certified mills like Vizag Steel, Simhadri TMT, OMPL TMT Rods, and A1 Gold Steel. Available diameters range from 4 mm to 25 mm, and lengths are customizable to your project specifications.",
     suggestedActions: [
       { label: 'View TMT Bars', action: '/products?category=tmt-bars', type: 'link' },
       { label: 'Call Sales', action: 'tel:+917780224863', type: 'link' },
@@ -113,8 +113,8 @@ const KNOWLEDGE_BASE: KnowledgeBaseItem[] = [
   },
   {
     category: 'brands',
-    keywords: ['brand', 'brands', 'partner', 'partners', 'dealership', 'tata', 'jsw', 'jindal', 'ompl', 'simhadri', 'hariom', 'aggold', 'ag', 'gold'],
-    response: "We are authorized distributors and partners of leading industrial brands, including Tata Steel (primary steel), JSW Steel (galvanized coils), Jindal (structural sections), Vizag Steel (TMT), Simhadri TMT, OMPL TMT Rods, Hariom Pipes, and AG Gold Steel.",
+    keywords: ['brand', 'brands', 'partner', 'partners', 'dealership', 'tata', 'jsw', 'jindal', 'ompl', 'simhadri', 'hariom', 'a1gold', 'a1', 'gold'],
+    response: "We are authorized distributors and partners of leading industrial brands, including Tata Steel (primary steel), JSW Steel (galvanized coils), Jindal (structural sections), Vizag Steel (TMT), Simhadri TMT, OMPL TMT Rods, Hariom Pipes, and A1 Gold Steel.",
     suggestedActions: [
       { label: 'View Products', action: '/products', type: 'link' },
       { label: 'WhatsApp Sales', action: 'https://wa.me/917780224863', type: 'link' }

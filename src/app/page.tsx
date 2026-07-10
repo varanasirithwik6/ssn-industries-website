@@ -26,7 +26,7 @@ export default function Home() {
     { name: 'OMPL', logoPath: '/images/logos/logo-ompl-tmt.png' },
     { name: 'uPVC Pipes', logoPath: '/images/logos/logo-upvc.png' },
     { name: 'Hariom Pipes', logoPath: '/images/logos/logo-hariom.png' },
-    { name: 'AG Gold Steel', logoPath: '/images/logos/logo-aggold.png' },
+    { name: 'A1 Gold Steel', logoPath: '/images/logos/logo-a1gold.png' },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

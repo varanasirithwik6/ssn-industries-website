@@ -23,7 +23,7 @@ const STATIC_BRANDS: BrandPartner[] = [
   { name: 'OMPL TMT Rods', type: 'Authorized Rebar Partner', description: 'High-strength thermo-mechanically treated reinforcement rebars engineered for robust concrete bonding and seismic durability.', logoText: 'OMPL', logoBg: 'bg-slate-700', logoPath: '/images/logos/logo-ompl-tmt.png' },
   { name: 'UPVC Roofing Products', type: 'Premium Roofing Partner', description: 'Weatherproof, corrosion-free, and thermal-insulating multi-layered UPVC roofing sheet solutions.', logoText: 'UPVC', logoBg: 'bg-green-700', logoPath: '/images/logos/logo-upvc.png' },
   { name: 'Hariom Pipes', type: 'Strategic Pipe Partner', description: 'Providing premium quality ERW black pipes, galvanized pipes, and scaffolding solutions engineered to strict safety guidelines.', logoText: 'HARIOM', logoBg: 'bg-orange-600', logoPath: '/images/logos/logo-hariom.png' },
-  { name: 'AG Gold Steel', type: 'Authorized Rebar Partner', description: 'Supplying premium quality structural rebars, alloy products, and building steel materials for long-lasting structural foundations.', logoText: 'AG GOLD', logoBg: 'bg-red-800', logoPath: '/images/logos/logo-aggold.png' },
+  { name: 'A1 Gold Steel', type: 'Authorized Rebar Partner', description: 'Supplying premium quality structural rebars, alloy products, and building steel materials for long-lasting structural foundations.', logoText: 'A1 GOLD', logoBg: 'bg-red-800', logoPath: '/images/logos/logo-a1gold.png' },
 ];
 
 export default function BrandsPage() {
